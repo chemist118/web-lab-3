@@ -1,0 +1,31 @@
+﻿@model IEnumerable<UserTask>
+
+@{
+    Layout = "_Layout";
+}
+
+<h2 class="task-title">Список задач</h2>
+<div class="add-task">@Html.ActionLink("Добавить задачу", "AddTask", "Tasks")</div>
+
+<table>
+    <tr>
+        <th class="internal">Название</th>
+        <th class="internal">Описание</th>
+        <th></th>
+    </tr>
+
+    @foreach (var userTask in Model)
+    {
+        <tr>
+            <td class="internal">
+                @Html.DisplayFor(modelItem => userTask.Title)
+            </td>
+            <td class="internal">
+                @Html.DisplayFor(modelItem => userTask.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Удалить", "DeleteTask", "Tasks", new {userTaskId = userTask.Id})
+            </td>
+        </tr>
+    }
+</table>
