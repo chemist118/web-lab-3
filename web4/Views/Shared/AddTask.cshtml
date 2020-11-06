@@ -1,0 +1,26 @@
+﻿@model web4.Data.Entities.UserTask
+
+@{
+    Layout = "_Layout";
+}
+
+<h2 class="task-title">Добавление новой задачи</h2>
+
+<form class="form-add" method="post">
+    <table>
+        <tr>
+            <th>Название</th>
+            <th>Описание</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                <input id="Name" name="Name" type="text">
+            </td>
+            <td>
+                <input id="Description" name="Description" type="text">
+            </td>
+        </tr>
+    </table>
+    <input class="btn-primary signIn-btn btn-add" type="submit" value="Добавить">
+</form>

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<web4.Data.Entities.UserTask>
+
+@{
+    Layout = "_Layout";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  function deleteUserTask(userTaskId) {
+    var row = document.getElementById(userTaskId);
+    $.ajax({
+            type: "POST",
+            url: "/api/ApiTasks/DeleteTask",
+            data: JSON.stringify(userTaskId),
+            contentType: 'application/json; charset=utf-8'
+        }).done(function(result) {
+            if(result)
+                row.parentNode.removeChild(row);
+        });
+    
+  }
+  function toggleCompleteTask(userTaskId, checkbox) {
+      $.ajax({
+              type: "POST",
+              url: "/api/ApiTasks/ToggleCompleteTask",
+              data: JSON.stringify(userTaskId),
+              contentType: 'application/json; charset=utf-8'
+          }).done(function(result) {
+              if(result)
+              {      
+              }
+          });
+  }
+</script>
+
+<h2 class="task-title">Список задач</h2>
+<div class="add-task">@Html.ActionLink("Добавить задачу", "AddTask", "Tasks")</div>
+<table>
+    <tr>
+        <th class="internal">Выполнена</th>
+        <th class="internal">Название</th>
+        <th class="internal">Описание</th>
+        <th class="internal"></th>
+        <th></th>
+    </tr>
+
+    @foreach (var userTask in Model)
+    {
+<tr id="@userTask.Id">
+    <td class="internal">
+        <input type="checkbox" asp-for="@userTask.IsCompleted" onchange="toggleCompleteTask('@userTask.Id', this)" />
+    </td>
+    <td class="internal">
+        @Html.DisplayFor(modelItem => userTask.Name)
+    </td>
+    <td class="internal">
+        @Html.DisplayFor(modelItem => userTask.Description)
+    </td>
+    <td class="internal">
+        @Html.ActionLink("Комментарии", "GetTask", "Tasks", new { userTaskId = userTask.Id })
+    </td>
+    <td>
+        <input class="btn-primary btn-delete" type="button" onclick="deleteUserTask('@userTask.Id'); " value="Удалить">
+    </td>
+</tr>}
+</table>

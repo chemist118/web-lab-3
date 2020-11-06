@@ -1,0 +1,183 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background: linear-gradient(180deg, #5EC985 0%, #52A771 100%), #52A771;
+    border-radius: 50px;
+    border: none !important;
+    outline: none !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #52A771;
+    border-color: #1861ac;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(180deg, #6FE69A 0%, #52A771 100%), #52A771;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+    background: #F8F9FA;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background: #F8F9FA;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.signIn {
+    display: flex;
+    justify-content: center !important;
+}
+
+.signIn-header {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.signIn-btn {
+    margin: 0 auto !important;
+    width: 150px !important;
+    height: 40px !important;
+    margin-top: 20px !important;
+}
+
+hr {
+    background: #52A771;
+    height: 2px;
+}
+
+.signIn-form {
+    text-align: center;
+}
+
+label {
+    color: #52A771;
+    font-weight: bold;
+}
+
+.task-title {
+    color: #52A771 !important;
+    margin-top: 50px !important;
+    margin-bottom: 70px !important;
+}
+
+td, th {
+    padding: 15px;
+}
+
+th {
+    color: #52a771;
+    text-align: center;
+}
+
+tr {
+    border-bottom: 1px solid black;
+}
+
+.add-task {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    margin-top: 20px;
+    margin: 0 auto;
+    background: #e5e5e5;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+a {
+    color: #52A771 !important;
+    font-weight: bold;
+}
+
+.btn-add {
+    text-align: center;
+    margin-top: 30px !important;
+}
+
+.form-add {
+    text-align: center;
+}
+
+.btn-delete {
+    padding: 7px 15px;
+}
+
+.internal {
+    text-align: center;
+}
+
+.btn-comm {
+    padding: 10px 15px;
+    text-align: center;
+    margin-bottom: 50px;
+    display: block;
+    margin-left: 40%;
+}
+
+input[type="text"] {
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0 7px;
+}
